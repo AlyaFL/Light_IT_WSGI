@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} | Bulletin Board</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col site-branding text-center">
+                <h2 class="site-title">
+                    <a href="/">Bulletin Board</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div id="content" class="site-content">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-primary btn-lg btn-block" href="/new_post" role="button">
+                        Create post
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <main id="main" class="site-main">
+                    {% block body %}{% endblock %}
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

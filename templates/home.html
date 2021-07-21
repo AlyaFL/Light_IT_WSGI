@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Home page{% endblock %}
+{% block body %}
+  <div class="add">
+    <a href = "/new"><input type=button value="New ad" class="new_ad_btn"></a>
+  </div>
+  <div class="ads">
+    {% for item in ads %}
+        <div class="ad"><a href="/ad_{{ item }}">{{ ads[item].theme }}</a>
+            <p>{{ads[item].date}}</p>
+            <p> {{ads[item].text}}</p>
+          </div>
+    {% endfor %}
+  </div>
+{% endblock %}
